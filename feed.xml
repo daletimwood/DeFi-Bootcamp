@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>DeFi Bootcamp</title>
+    <description>A structured bootcamp on decentralised finance and institutional blockchain infrastructure, told through Chainlink: oracles, tokenisation, cross-chain interoperability, and the commercial economics of the network.</description>
+    <link>https://daletimwood.github.io/DeFi-Bootcamp</link>
+    <language>en-gb</language>
+    <itunes:author>Tim Wood</itunes:author>
+    <itunes:image href="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/artwork.png"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:type>serial</itunes:type>
+    <itunes:category text="Business"/>
+    <itunes:category text="Investing"/>
+    <item>
+      <title>Track B, Ep 4 — The Commercial Challenge</title>
+      <description>Revenue channels, Economics 2.0, competitive threats, adoption barriers, and what the commercial architecture needs to contain.</description>
+      <itunes:episode>10</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:10:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-b-ep04-the-commercial-challenge</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/b-ep04-the-commercial-challenge.mp3" type="audio/mpeg" length="13811616"/>
+    </item>
+    <item>
+      <title>Track B, Ep 3 — From Architecture to Deployment</title>
+      <description>The institutional evidence base: production versus pilot across UBS, Amundi, J.P. Morgan, Swift, DTCC, Euroclear, and CRE.</description>
+      <itunes:episode>9</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:09:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-b-ep03-from-architecture-to-deployment</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/b-ep03-from-architecture-to-deployment.mp3" type="audio/mpeg" length="11993760"/>
+    </item>
+    <item>
+      <title>Track B, Ep 2 — Becoming the Standard</title>
+      <description>2017 to 2022: DeFi Summer, Total Value Secured, the 2021 whitepaper, Swift, CCIP, and the competitive picture.</description>
+      <itunes:episode>8</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:08:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-b-ep02-becoming-the-standard-v2</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/b-ep02-becoming-the-standard-v2.mp3" type="audio/mpeg" length="11592288"/>
+    </item>
+    <item>
+      <title>Track B, Ep 1 — The Problem Before the Product</title>
+      <description>Chainlink's origins: SmartContract.com, the Cornell collaboration, the 2017 token launch, and LINK's regulatory status.</description>
+      <itunes:episode>7</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:07:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-b-ep01-the-problem-before-the-product</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/b-ep01-the-problem-before-the-product.mp3" type="audio/mpeg" length="9336960"/>
+    </item>
+    <item>
+      <title>Track A, Supplemental — The 2017 Whitepaper Deep Dive</title>
+      <description>Design principles, SGX confidentiality, TLS-N, and the off-chain computation vision in the original Chainlink whitepaper.</description>
+      <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:06:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-ep-supp-whitepaper-deep-dive</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/ep-supp-whitepaper-deep-dive.mp3" type="audio/mpeg" length="14774976"/>
+    </item>
+    <item>
+      <title>Track A, Ep 5 — Why TradFi Needs DeFi</title>
+      <description>Synthesis: why traditional finance is becoming DeFi's largest customer, and the revenue-to-value gap.</description>
+      <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:05:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-ep05-why-tradfi-needs-defi-v2</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/ep05-why-tradfi-needs-defi-v2.mp3" type="audio/mpeg" length="11621376"/>
+    </item>
+    <item>
+      <title>Track A, Ep 4 — The Bridge Standard</title>
+      <description>Cross-chain interoperability, CCIP, and why the standard-setter wins disproportionately.</description>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:04:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-ep04-the-bridge-standard</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/ep04-the-bridge-standard.mp3" type="audio/mpeg" length="12674304"/>
+    </item>
+    <item>
+      <title>Track A, Ep 3 — The Ten Trillion Wave</title>
+      <description>Real-world asset tokenisation: what it means, which asset classes move first, and how to read the market-size forecasts.</description>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:03:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-ep03-the-ten-trillion-wave-v2</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/ep03-the-ten-trillion-wave-v2.mp3" type="audio/mpeg" length="11796192"/>
+    </item>
+    <item>
+      <title>Track A, Ep 2 — The Connectivity Gap</title>
+      <description>The oracle problem: why blockchains cannot see the outside world, and how decentralised oracle networks bridge it.</description>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:02:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-ep02-the-connectivity-gap</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/ep02-the-connectivity-gap.mp3" type="audio/mpeg" length="11154528"/>
+    </item>
+    <item>
+      <title>Track A, Ep 1 — The Architecture of Trustless Finance</title>
+      <description>What DeFi is, how smart contracts work, and what 'permissionless' and 'trustless' actually mean.</description>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Thu, 24 Sep 2026 09:01:00 +0100</pubDate>
+      <guid isPermaLink="false">defi-bootcamp-ep01-the-architecture-of-trustless-finance</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/ep01-the-architecture-of-trustless-finance.mp3" type="audio/mpeg" length="9711360"/>
+    </item>
+  </channel>
+</rss>
