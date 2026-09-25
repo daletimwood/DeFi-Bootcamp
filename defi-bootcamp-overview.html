@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeFi Bootcamp — Chainlink Study Series</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #000000;
+    --paper: #f0f4f8;
+    --cream: #e2e8f0;
+    --blue-accent: #2563eb;
+    --blue-light: #eff6ff;
+    --blue-dark: #1e3a8a;
+    --slate: #475569;
+    --rule: #cbd5e1;
+    --episode-bg: #ffffff;
+    --amber: #b45309;
+    --amber-light: #fef3c7;
+    --amber-border: #d97706;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--blue-dark);
+    color: var(--paper);
+    padding: 60px 80px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue-accent), #60a5fa, var(--blue-accent));
+  }
+
+  .masthead-rule {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 20px;
+  }
+
+  .masthead h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .masthead h1 em {
+    font-style: italic;
+    color: #60a5fa;
+  }
+
+  .masthead-sub {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #cbd5e1;
+    letter-spacing: 0.04em;
+    margin-top: 16px;
+    max-width: 640px;
+  }
+
+  .masthead-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid #2e4a8f;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #60a5fa;
+  }
+
+  .meta-value {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
+  }
+
+  /* INTRO BAND */
+  .intro-band {
+    background: var(--cream);
+    padding: 48px 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+  }
+
+  .intro-block h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+
+  .intro-block p {
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.75;
+  }
+
+  .source-list {
+    list-style: none;
+    margin-top: 12px;
+  }
+
+  .source-list li {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--slate);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 10px;
+  }
+
+  .source-list li::before {
+    content: '→';
+    color: var(--blue-accent);
+    flex-shrink: 0;
+  }
+
+  /* OBJECTIVE BAND */
+  .objective-band {
+    background: var(--blue-dark);
+    color: var(--paper);
+    padding: 32px 80px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .objective-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    white-space: nowrap;
+  }
+
+  .objective-text {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.65;
+  }
+
+  .objective-text strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* TRACK HEADERS */
+  .track {
+    padding: 0 80px;
+    margin-top: 56px;
+    margin-bottom: 0;
+  }
+
+  .track-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--blue-accent);
+    margin-bottom: 32px;
+  }
+
+  .track-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue-accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .track-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .track-desc {
+    font-size: 13px;
+    color: var(--slate);
+    max-width: 700px;
+    margin-left: auto;
+    font-style: italic;
+  }
+
+  /* EPISODE GRID */
+  .episodes-grid {
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 8px;
+  }
+
+  .episodes-grid.single-col {
+    grid-template-columns: 1fr;
+    max-width: calc(50% + 80px);
+  }
+
+  /* EPISODE CARDS */
+  .episode-card {
+    background: var(--episode-bg);
+    border: 1px solid var(--rule);
+    padding: 28px 30px 24px;
+    position: relative;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .episode-card:hover {
+    box-shadow: 4px 4px 0 var(--blue-accent);
+  }
+
+  .ep-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .ep-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 44px;
+  }
+
+  .ep-title-block {
+    flex: 1;
+  }
+
+  .ep-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    margin-bottom: 5px;
+  }
+
+  .ep-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  .ep-premise {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.65;
+    margin-bottom: 16px;
+    padding-left: 60px;
+  }
+
+  .ep-divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 16px 0;
+  }
+
+  .ep-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    margin-bottom: 8px;
+  }
+
+  .ep-beats {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+
+  .ep-beats li {
+    font-size: 12.5px;
+    color: var(--ink);
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .ep-beats li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--blue-accent);
+  }
+
+  .ep-rigour {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue-accent);
+    padding: 10px 14px;
+    margin-top: 14px;
+  }
+
+  .ep-rigour-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+    margin-bottom: 4px;
+  }
+
+  .ep-rigour p {
+    font-size: 11.5px;
+    color: var(--slate);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* CFO RELEVANCE BLOCK — amber variant for high-signal items */
+  .ep-cfo {
+    background: var(--amber-light);
+    border-left: 3px solid var(--amber-border);
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+
+  .ep-cfo-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 4px;
+  }
+
+  .ep-cfo p {
+    font-size: 11.5px;
+    color: #78350f;
+    line-height: 1.5;
+  }
+
+  /* KEY CONCEPTS PILLS */
+  .ep-concepts {
+    margin-top: 12px;
+  }
+
+  .ep-concept-pill {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    background: var(--blue-light);
+    color: var(--slate);
+    padding: 3px 10px;
+    margin: 3px 3px 0 0;
+    border: 1px solid var(--rule);
+  }
+
+  /* STATUS */
+  .ep-status-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .ep-status-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .status-queued {
+    color: var(--slate);
+    border-color: var(--rule);
+    background: var(--cream);
+  }
+
+  .ep-status-detail {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--slate);
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+  }
+
+  /* TRACK BADGE */
+  .track-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid;
+  }
+
+  .badge-track-a {
+    color: var(--blue-dark);
+    border-color: var(--blue-accent);
+    background: var(--blue-light);
+  }
+
+  .badge-track-b {
+    color: #064e3b;
+    border-color: #10b981;
+    background: #d1fae5;
+  }
+
+  /* NOTETAKING GUIDE */
+  .notetaking-band {
+    margin: 48px 80px 0;
+    background: var(--blue-dark);
+    padding: 32px 40px;
+  }
+
+  .notetaking-band h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 20px;
+  }
+
+  .quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .quadrant {
+    background: #162d6e;
+    padding: 16px 18px;
+    border-left: 2px solid #60a5fa;
+  }
+
+  .quadrant-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 6px;
+  }
+
+  .quadrant p {
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--blue-dark);
+    color: #94a3b8;
+    padding: 40px 80px;
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    line-height: 2;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    max-width: 420px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    font-style: italic;
+  }
+
+  .footer-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    color: #60a5fa;
+    margin-bottom: 8px;
+  }
+
+  /* SPACER */
+  .section-spacer {
+    height: 32px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-rule">Study Series · Chainlink Labs · DeFi and Institutional Blockchain</div>
+  <h1>DeFi <em>Bootcamp</em></h1>
+  <div class="masthead-sub">Five episodes of structured research across two tracks. Track A builds DeFi literacy — vocabulary, mechanics, and institutional logic. Track B covers Chainlink's history, product architecture, and commercial position.</div>
+  <div class="masthead-meta">
+    <div class="meta-item">
+      <span class="meta-label">Episodes</span>
+      <span class="meta-value">5 + Whitepaper</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tracks</span>
+      <span class="meta-value">A: DeFi Literacy · B: Chainlink Depth</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Focus</span>
+      <span class="meta-value">Institutional Blockchain · RWA Tokenisation · Oracle Infrastructure</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Note-taking</span>
+      <span class="meta-value">GoodNotes · Apple Pencil · 4-quadrant method</span>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO BAND -->
+<div class="intro-band">
+  <div class="intro-grid">
+    <div class="intro-block">
+      <h2>The Learning Objective</h2>
+      <p>This curriculum is built for a commercial strategist, not a developer. The goal is <em>translation fluency</em> — understanding the vocabulary, mechanics, and institutional logic of DeFi and Chainlink well enough to engage as a peer in commercial and executive conversations. Every concept here has a parallel in enterprise software. The fluency required is knowing how to map one world to the other.</p>
+    </div>
+    <div class="intro-block">
+      <h2>Research Sources</h2>
+      <ul class="source-list">
+        <li>BIS Working Papers 1061 &amp; 1066 — DeFi fundamentals</li>
+        <li>Federal Reserve FEDS 2022-057 — DeFi risk analysis</li>
+        <li>CFTC Primer on Smart Contracts (2018)</li>
+        <li>Chainlink Whitepaper v1.0 — Nazarov, Ellis, Juels (2017)</li>
+        <li>BIS / FSB / IMF — RWA tokenisation research</li>
+        <li>MAS Project Guardian publications (2023–2025)</li>
+        <li>ACM / IEEE — Oracle security and cross-chain literature</li>
+        <li>Chainlink Q1 2026 Quarterly Review</li>
+        <li>Parallel Web landscape scans · Track B intelligence briefing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- OBJECTIVE BAND -->
+<div class="objective-band">
+  <div class="objective-label">The core question</div>
+  <div class="objective-text">Chainlink has enabled <strong>$34 trillion in cumulative transaction value</strong> on approximately $63M in annualised protocol revenue. That ratio — between value enabled and value captured — is the central commercial challenge. Understanding why it exists, and what the architecture to close it looks like, is the purpose of this series.</div>
+</div>
+
+<!-- ═══════════════════════════════ -->
+<!-- TRACK A -->
+<!-- ═══════════════════════════════ -->
+
+<div class="track">
+  <div class="track-header">
+    <span class="track-label">Track A</span>
+    <span class="track-title">DeFi Literacy</span>
+    <span class="track-desc">Conceptual fluency in the vocabulary, mechanics, and institutional logic of decentralised finance — enough to speak it, not just understand it.</span>
+  </div>
+</div>
+
+<div class="episodes-grid">
+
+  <!-- EPISODE 1 -->
+  <div class="episode-card">
+    <span class="track-badge badge-track-a">Track A</span>
+    <div class="ep-header">
+      <div class="ep-number">01</div>
+      <div class="ep-title-block">
+        <div class="ep-tag">Foundation · What DeFi Is and Why It Exists</div>
+        <div class="ep-title">The Architecture of Trustless Finance</div>
+      </div>
+    </div>
+    <p class="ep-premise">DeFi is programmable, open-access financial infrastructure that replaces some institutional intermediation with distributed consensus and smart-contract execution. Before everything else, this episode establishes the conceptual scaffold — what the system is, why it was built, and why the institutional world is now paying attention.</p>
+    <div class="ep-divider"></div>
+    <div class="ep-section-label">Episode beats</div>
+    <ul class="ep-beats">
+      <li>What DeFi is and why it exists — the BIS definition: "competitive, contestable, composable and non-custodial financial ecosystem" with no conventional safety net</li>
+      <li>TradFi vs DeFi — the institutional comparison across custody, credit, access, record-keeping, and transparency</li>
+      <li>Smart contracts as self-executing agreements — the CFTC framing: coded functions that may execute contract terms when conditions are met, not legally self-enforcing but automatically rule-applying</li>
+      <li>Permissionless and trustless — what these terms actually mean (trust shifted, not eliminated) and where the risks remain</li>
+      <li>DeFi primitives — lending, borrowing, DEXs, stablecoins; why Ethereum became the primary DeFi platform</li>
+      <li>The honest caveat — decentralisation is a goal partially achieved; disintermediation can reproduce at other layers</li>
+    </ul>
+    <div class="ep-rigour">
+      <div class="ep-rigour-label">Intellectual grounding</div>
+      <p>BIS Working Paper 1066 (Technology of DeFi) · BIS Working Paper 1061 (Cryptocurrencies and DeFi) · Federal Reserve FEDS 2022-057 · CFTC Primer on Smart Contracts · Ethereum Whitepaper (Buterin, 2014) · Brookings / Makarov &amp; Schoar</p>
+    </div>
+    <div class="ep-cfo">
+      <div class="ep-cfo-label">Commercial translation</div>
+      <p>Smart contracts are pricing and SLA logic executed without manual intervention — like a billing engine that can't be overridden. The "trustless" framing maps directly to audit and compliance: code is the contract, on-chain state is the record.</p>
+    </div>
+    <div class="ep-concepts">
+      <div class="ep-section-label">Key concepts to master</div>
+      <span class="ep-concept-pill">Smart contract</span>
+      <span class="ep-concept-pill">Permissionless</span>
+      <span class="ep-concept-pill">Trustless</span>
+      <span class="ep-concept-pill">Composability</span>
+      <span class="ep-concept-pill">Non-custodial</span>
+      <span class="ep-concept-pill">Stablecoin</span>
+    </div>
+    <div class="ep-status-section">
+      <span class="ep-status-badge status-queued">Queued</span>
+      <span class="ep-status-detail">Source: Bankless Ep.55 "Welcome to Bankless 2021 Edition" · Parallel Web research retrieved</span>
+    </div>
+  </div>
+
+  <!-- EPISODE 2 -->
+  <div class="episode-card">
+    <span class="track-badge badge-track-a">Track A</span>
+    <div class="ep-header">
+      <div class="ep-number">02</div>
+      <div class="ep-title-block">
+        <div class="ep-tag">The Oracle Problem · Why Chainlink Exists</div>
+        <div class="ep-title">The Connectivity Gap That Created a Category</div>
+      </div>
+    </div>
+    <p class="ep-premise">Smart contracts are tamperproof and self-executing — but they are blind to the real world. They cannot fetch an asset price, confirm a shipment, read a weather event, or verify a payment without a trusted data feed. This is the oracle problem, and it is the single most important concept in understanding why Chainlink exists and why it is irreplaceable.</p>
+    <div class="ep-divider"></div>
+    <div class="ep-section-label">Episode beats</div>
+    <ul class="ep-beats">
+      <li>Why smart contracts cannot access external data natively — consensus requires every node to reproduce the same computation; external systems are non-deterministic</li>
+      <li>What oracles are and how they function as data bridges — the four-stage model: request, query, authenticate/aggregate, deliver on-chain</li>
+      <li>Centralised vs decentralised oracle networks — single point of failure vs multi-node aggregation; the freeloading and Sybil attack problems</li>
+      <li>Security and manipulation risks — source integrity, delivery integrity, mirroring attacks; why decentralisation reduces but does not eliminate the truth problem</li>
+      <li>Why data integrity is the critical dependency for institutional finance — a wrong price feed can trigger an irreversible contract execution</li>
+      <li>The original whitepaper design: reputation system, order-matching, aggregation contracts, LINK token as payment and incentive mechanism</li>
+    </ul>
+    <div class="ep-rigour">
+      <div class="ep-rigour-label">Intellectual grounding</div>
+      <p>Chainlink Whitepaper v1.0 — Ellis, Juels, Nazarov (2017) · ACM oracle security survey · BIS cross-chain literature · NIST smart contract glossary · Chainlink Whitepaper v2.0 (2021)</p>
+    </div>
+    <div class="ep-cfo">
+      <div class="ep-cfo-label">CFO translation</div>
+      <p>The oracle is the equivalent of a trusted data integration layer in enterprise software — the middleware that tells the billing engine what the price is. Without it, the smart contract is an engine with no fuel. Chainlink's commercial position is built on being the most trusted version of that layer at institutional scale.</p>
+    </div>
+    <div class="ep-concepts">
+      <div class="ep-section-label">Key concepts to master</div>
+      <span class="ep-concept-pill">Oracle problem</span>
+      <span class="ep-concept-pill">Data feed</span>
+      <span class="ep-concept-pill">Decentralised oracle network</span>
+      <span class="ep-concept-pill">Aggregation</span>
+      <span class="ep-concept-pill">Sybil attack</span>
+      <span class="ep-concept-pill">LINK token</span>
+    </div>
+    <div class="ep-status-section">
+      <span class="ep-status-badge status-queued">Queued</span>
+      <span class="ep-status-detail">Source: Chainlink Whitepaper v1.0 (ingested) · Parallel Web oracle research retrieved</span>
+    </div>
+  </div>
+
+  <!-- EPISODE 3 -->
+  <div class="episode-card">
+    <span class="track-badge badge-track-a">Track A</span>
+    <div class="ep-header">
+      <div class="ep-number">03</div>
+      <div class="ep-title-block">
+        <div class="ep-tag">Real-World Asset Tokenisation · The Commercial Engine</div>
+        <div class="ep-title">The $10 Trillion Wave Arriving Now</div>
+      </div>
+    </div>
+    <p class="ep-premise">Tokenisation — converting rights to a real-world asset into a digital token on a blockchain — is the commercial engine behind everything Chainlink is building toward. The RWA market is projected to reach $5–16 trillion by 2030 depending on scope. This episode explains why, which asset classes are moving first, and why Chainlink sits at the critical infrastructure layer that makes tokenised assets function.</p>
+    <div class="ep-divider"></div>
+    <div class="ep-section-label">Episode beats</div>
+    <ul class="ep-beats">
+      <li>What tokenisation means — converting ownership rights or contractual entitlements into on-chain tokens; the distinction between tokenising the asset and tokenising the representation</li>
+      <li>Which asset classes are moving first — money market funds, bonds, trade receivables, repo, real estate; why fixed income leads (settlement certainty, programmable coupon)</li>
+      <li>The commercial case — T+0 settlement vs T+2, failed trade cost reduction, 24/7 markets, fractional access, automated compliance via smart contracts</li>
+      <li>MAS Project Guardian as the institutional proof — Franklin Templeton, T. Rowe Price, Citi, BNY Mellon, J.P. Morgan; live pilots not press releases</li>
+      <li>Why Chainlink is the critical dependency — tokenised assets need verified NAV data, cross-chain interoperability, and workflow orchestration; none of that functions without the oracle and CCIP layer</li>
+      <li>Market size projections — BCG / BlackRock / MAS estimates to 2030; the fee revenue implication if Chainlink captures proportionate share</li>
+    </ul>
+    <div class="ep-rigour">
+      <div class="ep-rigour-label">Intellectual grounding</div>
+      <p>MAS Project Guardian publications (2023–2025) · BIS Working Papers on tokenisation · IMF digital money research · FSB reports · Chainlink Q1 2026 Quarterly Review (Amundi/Spiko case) · BCG tokenisation market projections</p>
+    </div>
+    <div class="ep-cfo">
+      <div class="ep-cfo-label">Commercial translation</div>
+      <p>The Amundi/Spiko tokenised fund — $100M committed launch AUM — is the proof point. Every tokenised fund that goes live on-chain needs Chainlink's NAV data feed and cross-chain rails to function. At $500B in tokenised RWAs on-chain, the fee revenue expands proportionately — if the commercial architecture is in place to capture it.</p>
+    </div>
+    <div class="ep-concepts">
+      <div class="ep-section-label">Key concepts to master</div>
+      <span class="ep-concept-pill">Tokenisation</span>
+      <span class="ep-concept-pill">RWA</span>
+      <span class="ep-concept-pill">T+0 settlement</span>
+      <span class="ep-concept-pill">DvP / PvP</span>
+      <span class="ep-concept-pill">NAV data feed</span>
+      <span class="ep-concept-pill">Project Guardian</span>
+    </div>
+    <div class="ep-status-section">
+      <span class="ep-status-badge status-queued">Queued</span>
+      <span class="ep-status-detail">Source: The Defiant RWA episodes · Parallel Web RWA research retrieved</span>
+    </div>
+  </div>
+
+  <!-- EPISODE 4 -->
+  <div class="episode-card">
+    <span class="track-badge badge-track-a">Track A</span>
+    <div class="ep-header">
+      <div class="ep-number">04</div>
+      <div class="ep-title-block">
+        <div class="ep-tag">Cross-Chain Interoperability · CCIP and the Network Standard</div>
+        <div class="ep-title">Why Being the Bridge Standard Matters More Than Being the Bridge</div>
+      </div>
+    </div>
+    <p class="ep-premise">Blockchain fragmentation is a commercial problem. An institution on a private blockchain cannot transact with a protocol on a public blockchain without a trusted interoperability layer. CCIP (Cross-Chain Interoperability Protocol) is Chainlink's answer. This episode explains what cross-chain protocols do, why the security model matters more than the technology, and why being the interoperability standard creates durable commercial advantages that individual bridges cannot.</p>
+    <div class="ep-divider"></div>
+    <div class="ep-section-label">Episode beats</div>
+    <ul class="ep-beats">
+      <li>Why blockchain fragmentation is a commercial problem — siloed liquidity, incompatible networks, friction for institutions trying to operate across public and private chains</li>
+      <li>What cross-chain protocols do technically — message passing, asset bridging, state synchronisation; the distinction between bridges and full interoperability protocols</li>
+      <li>Security risks in cross-chain architecture — bridge hacks have cost billions; why security model matters more than speed or cost for institutional adoption</li>
+      <li>CCIP's institutional use case — a bank on a private chain (e.g., Kinexys by J.P. Morgan) transacting with a public DeFi protocol; the J.P. Morgan / Ondo cross-chain DvP as a live example</li>
+      <li>Network effects and switching costs — 60+ chains supported; once an institution builds on CCIP, rebuilding on a competitor is operationally disruptive</li>
+      <li>The standard-setting dynamic — being the interoperability standard is structurally analogous to Swift in traditional finance; the commercial value of ubiquity over feature parity</li>
+    </ul>
+    <div class="ep-rigour">
+      <div class="ep-rigour-label">Intellectual grounding</div>
+      <p>BIS research on cross-chain settlement · ACM / IEEE blockchain interoperability literature · Chainlink CCIP documentation · Chainlink Q1 2026 Review · J.P. Morgan Kinexys case study · MAS Project Guardian cross-chain pilots</p>
+    </div>
+    <div class="ep-cfo">
+      <div class="ep-cfo-label">Commercial translation</div>
+      <p>CCIP is the enterprise integration middleware of institutional blockchain. The switching cost argument is direct — once UBS, ANZ, and DTCC have built workflows on CCIP, the cost of migrating to a competitor is an operational programme, not a configuration change. That is the commercial moat, and the primary structural defence against commoditisation.</p>
+    </div>
+    <div class="ep-concepts">
+      <div class="ep-section-label">Key concepts to master</div>
+      <span class="ep-concept-pill">CCIP</span>
+      <span class="ep-concept-pill">Cross-chain bridge</span>
+      <span class="ep-concept-pill">Interoperability protocol</span>
+      <span class="ep-concept-pill">Switching cost</span>
+      <span class="ep-concept-pill">Network effect</span>
+      <span class="ep-concept-pill">Private chain / public chain</span>
+    </div>
+    <div class="ep-status-section">
+      <span class="ep-status-badge status-queued">Queued</span>
+      <span class="ep-status-detail">Source: Bankless CCIP episodes · Parallel Web interoperability research retrieved</span>
+    </div>
+  </div>
+
+  <!-- EPISODE 5 -->
+  <div class="episode-card" style="grid-column: 1 / -1;">
+    <span class="track-badge badge-track-a">Track A · Synthesis</span>
+    <div class="ep-header">
+      <div class="ep-number">05</div>
+      <div class="ep-title-block">
+        <div class="ep-tag">TradFi Meets DeFi · The Institutional Transition</div>
+        <div class="ep-title">Why Traditional Finance Will Become DeFi's Largest Customer</div>
+      </div>
+    </div>
+    <p class="ep-premise">This is Nazarov's central thesis — and the strategic frame for everything in this series. Institutional finance is not simply experimenting with blockchain. It is migrating core operational infrastructure: settlement, fund administration, corporate actions, cross-border payments. The question is not whether this transition happens, but who owns the critical infrastructure layer when it does. This episode synthesises the full picture and lands the commercial implication.</p>
+    <div class="ep-divider"></div>
+    <div class="ep-section-label">Episode beats</div>
+    <ul class="ep-beats">
+      <li>Why institutional firms are adopting blockchain — cost reduction in reconciliation and post-trade administration; settlement certainty through atomic DvP/PvP; regulatory clarity via MiCA, US digital commodity classification, MAS frameworks</li>
+      <li>Specific institutional use cases live now — tokenised funds (Franklin Templeton, Amundi), cross-border payments (Citi, BNY Mellon), corporate actions (Swift, DTCC, Euroclear), repo and portfolio management (J.P. Morgan, Apollo)</li>
+      <li>Infrastructure dependencies institutions require — data integrity (compliant master securityholder files), KYC/AML integration, privacy controls, interoperability across public and private networks, SLAs with legal enforceability</li>
+      <li>The commercial model implication — how DeFi infrastructure providers monetise institutional adoption differently from retail DeFi; the shift from token-incentive economics to fee-funded enterprise revenue</li>
+      <li>Comparable infrastructure monetisation models — Swift (transaction fees on a trusted standard), Bloomberg Terminal (premium data subscription), Twilio (usage-based API pricing); what each implies for Chainlink's commercial architecture</li>
+      <li>The gap: Chainlink enables $34.18T in cumulative transaction value on ~$63M annualised protocol revenue — that ratio is the central commercial architecture problem</li>
+    </ul>
+    <div class="ep-rigour">
+      <div class="ep-rigour-label">Intellectual grounding</div>
+      <p>MAS Project Guardian — Operationalising Tokenised Funds (2025) · BIS quarterly reviews · FSB reports on digital finance · Sergey Nazarov, "Why TradFi Will Be the Largest Customer of DeFi" — TOKEN2049 Singapore, September 2024 · Chainlink Q1 2026 Review · Federal Reserve stablecoin research</p>
+    </div>
+    <div class="ep-cfo">
+      <div class="ep-cfo-label">Commercial translation — the synthesis framing</div>
+      <p>The market opportunity is real and the timing is right. But the number that stands out is not the transaction value Chainlink enables — it is the revenue-to-value-enabled ratio. $34.18 trillion in cumulative transaction value on $63M in annualised protocol revenue. That is not a product problem or a technology problem. That is a commercial architecture problem — and the most important open question in Chainlink's growth story.</p>
+    </div>
+    <div class="ep-concepts">
+      <div class="ep-section-label">Key concepts to master</div>
+      <span class="ep-concept-pill">Settlement finality</span>
+      <span class="ep-concept-pill">Atomic DvP</span>
+      <span class="ep-concept-pill">Tokenised fund</span>
+      <span class="ep-concept-pill">Payment abstraction</span>
+      <span class="ep-concept-pill">Protocol revenue</span>
+      <span class="ep-concept-pill">Fee-funded rewards</span>
+      <span class="ep-concept-pill">MiCA</span>
+      <span class="ep-concept-pill">CRE</span>
+    </div>
+    <div class="ep-status-section">
+      <span class="ep-status-badge status-queued">Queued</span>
+      <span class="ep-status-detail">Source: Nazarov TOKEN2049 keynote (Sep 2024) · MAS Project Guardian publications · Parallel Web TradFi/DeFi convergence research retrieved</span>
+    </div>
+  </div>
+
+</div><!-- /episodes-grid Track A -->
+
+<!-- WHITEPAPER NOTE BAND -->
+<div style="margin: 32px 80px 0; background: var(--cream); border: 1px solid var(--rule); padding: 20px 28px; display: flex; align-items: flex-start; gap: 20px;">
+  <div style="font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue-accent); white-space: nowrap; padding-top: 2px;">Primary Source</div>
+  <div style="font-size: 13px; color: var(--slate); line-height: 1.65;"><strong style="color: var(--ink);">Chainlink Whitepaper v1.0 — Ellis, Juels &amp; Nazarov (2017).</strong> Converted to Markdown and available separately. Prioritise sections 1 (Introduction), 3 (Oracle Security), and 8 (Conclusion + Design Principles). The Design Principles — decentralisation, modularity, open source — are the founding commitments that explain every major product decision since. The through-line from this document to CRE in 2026 is the same architecture, nine years apart.</div>
+</div>
+
+<!-- SPACER -->
+<div class="section-spacer"></div>
+
+<!-- NOTETAKING METHOD -->
+<div class="notetaking-band">
+  <h3>GoodNotes Method — One Page Per Episode, Four Quadrants</h3>
+  <div class="quadrant-grid">
+    <div class="quadrant">
+      <div class="quadrant-label">What it is</div>
+      <p>The concept in one sentence. No jargon. If you cannot write it in plain English, you haven't understood it yet.</p>
+    </div>
+    <div class="quadrant">
+      <div class="quadrant-label">Why Chainlink needs it</div>
+      <p>How this concept connects directly to Chainlink's business — product, revenue, competitive position, or CFO pressure point.</p>
+    </div>
+    <div class="quadrant">
+      <div class="quadrant-label">What a CFO would say</div>
+      <p>The finance framing of the same idea. Revenue implication, cost reduction, risk mitigation, or balance sheet impact.</p>
+    </div>
+    <div class="quadrant">
+      <div class="quadrant-label">My angle — the enterprise parallel</div>
+      <p>Where your enterprise software experience maps directly to this concept. The translation from DeFi mechanics to commercial software dynamics is where fluency becomes usable.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div class="footer-title">DeFi Bootcamp</div>
+    <div class="footer-left">
+      CHAINLINK LABS · DEFI AND INSTITUTIONAL BLOCKCHAIN<br>
+      TRACK A: 5 EPISODES · TRACK B: INTELLIGENCE BRIEFING<br>
+      GENERATED SEPTEMBER 2026
+    </div>
+  </div>
+  <div class="footer-note">
+    Sources: BIS Working Papers 1061 &amp; 1066 · Federal Reserve FEDS 2022-057 · CFTC Smart Contracts Primer · Chainlink Whitepaper v1.0 (Nazarov, Ellis, Juels 2017) · MAS Project Guardian publications 2023–2025 · Chainlink Q1 2026 Quarterly Review · ACM oracle security survey · Nazarov TOKEN2049 keynote September 2024. Research retrieved via Parallel Web. Not investment advice.
+  </div>
+</div>
+
+</body>
+</html>
