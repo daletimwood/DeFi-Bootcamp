@@ -8,9 +8,17 @@
     <itunes:author>Tim Wood</itunes:author>
     <itunes:image href="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/artwork.png"/>
     <itunes:explicit>no</itunes:explicit>
-    <itunes:type>serial</itunes:type>
+    <itunes:type>episodic</itunes:type>
     <itunes:category text="Business"/>
     <itunes:category text="Investing"/>
+    <item>
+      <title>DeFi Digest — Friday, September 25, 2026</title>
+      <description>Covering: DefiLlama Research &lt;defillama-research@mail.beehiiv.com&gt;, Chainlink &lt;no-reply@chain.link&gt;, OMFIF &lt;noreply@omfif.org&gt;</description>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Fri, 25 Sep 2026 06:47:11 +0100</pubDate>
+      <guid isPermaLink="false">defi-digest-2026-09-25</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/defi-2026-09-25.mp3" type="audio/mpeg" length="4840992"/>
+    </item>
     <item>
       <title>Track B, Ep 4 — The Commercial Challenge</title>
       <description>Revenue channels, Economics 2.0, competitive threats, adoption barriers, and what the commercial architecture needs to contain.</description>
