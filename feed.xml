@@ -12,6 +12,14 @@
     <itunes:category text="Business"/>
     <itunes:category text="Investing"/>
     <item>
+      <title>DeFi Digest — Tuesday, September 29, 2026</title>
+      <description>Covering: OMFIF &lt;noreply@omfif.org&gt;, Trade Finance Talks &lt;talks@tradefinanceglobal.com&gt;</description>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Tue, 29 Sep 2026 06:57:20 +0100</pubDate>
+      <guid isPermaLink="false">defi-digest-2026-09-29</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/defi-2026-09-29.mp3" type="audio/mpeg" length="4741056"/>
+    </item>
+    <item>
       <title>DeFi Digest — Monday, September 28, 2026</title>
       <description>No new DeFi developments arrived today — a refresher on one DeFi Bootcamp glossary term: Freeloading.</description>
       <itunes:episodeType>full</itunes:episodeType>
