@@ -12,6 +12,14 @@
     <itunes:category text="Business"/>
     <itunes:category text="Investing"/>
     <item>
+      <title>DeFi Digest — Tuesday, October 6, 2026</title>
+      <description>Covering: OMFIF &lt;noreply@omfif.org&gt;, The Defiant &lt;no-reply@mail.thedefiant.io&gt;</description>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Tue, 06 Oct 2026 06:43:34 +0100</pubDate>
+      <guid isPermaLink="false">defi-digest-2026-10-06</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/defi-2026-10-06.mp3" type="audio/mpeg" length="3479904"/>
+    </item>
+    <item>
       <title>DeFi Digest — Monday, October 5, 2026</title>
       <description>Covering: OMFIF &lt;noreply@omfif.org&gt;</description>
       <itunes:episodeType>full</itunes:episodeType>
