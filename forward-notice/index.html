@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forward Notice: Tokenisation and Digital Payment Regulation</title>
+<meta name="description" content="A monthly register of cryptoasset, stablecoin, tokenisation and digital payment regulation that creates deadlines or obligations for blockchain infrastructure vendors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b1220;
+    --muted: #475569;
+    --faint: #94a3b8;
+    --paper: #f0f4f8;
+    --card: #ffffff;
+    --rule: #cbd5e1;
+    --accent: #2563eb;
+    --accent-dark: #1e3a8a;
+    --accent-light: #eff6ff;
+    --soon: #b45309;
+    --soon-light: #fef3c7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Lato', system-ui, sans-serif; font-weight: 400; line-height: 1.55; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  header { background: var(--ink); color: #fff; padding: 40px 0 32px; border-bottom: 3px solid var(--accent); }
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #93c5fd; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 10px 0 14px; }
+  header p { color: #cbd5e1; max-width: 720px; font-weight: 300; }
+  .meta { margin-top: 18px; font-family: 'DM Mono', monospace; font-size: 12px; color: #93c5fd; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  section { padding: 36px 0 8px; }
+  h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 26px; margin-bottom: 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+  .timeline { list-style: none; border-left: 2px solid var(--accent); margin-left: 6px; }
+  .timeline li { position: relative; padding: 0 0 18px 20px; }
+  .timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--accent); }
+  .tdate { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent-dark); }
+  .ttype { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-left: 8px; }
+  .ttitle { font-weight: 700; margin-top: 2px; }
+  .tnote { color: var(--muted); font-size: 14px; }
+  .changes { list-style: none; }
+  .changes li { background: var(--card); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 14px; margin-bottom: 8px; font-size: 14px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; align-items: center; }
+  .filters label { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+  select, input[type=search] { font: inherit; font-size: 14px; padding: 7px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--card); color: var(--ink); min-width: 150px; }
+  .count { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); margin-left: auto; align-self: flex-end; }
+  .grid { display: grid; gap: 12px; }
+  .item { background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--rule); border-radius: 4px; padding: 14px 16px; }
+  .item.h06 { border-left-color: var(--soon); }
+  .item.h618 { border-left-color: var(--accent); }
+  .item .top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 11px; padding: 2px 7px; border-radius: 3px; background: var(--accent-light); color: var(--accent-dark); white-space: nowrap; }
+  .tag.soon { background: var(--soon-light); color: var(--soon); }
+  .tag.plain { background: #f1f5f9; color: var(--muted); }
+  .item h3 { font-size: 16px; font-weight: 700; margin: 6px 0 2px; }
+  .body-line { font-size: 13px; color: var(--muted); }
+  .effect { margin-top: 8px; font-size: 14px; }
+  .dates { margin-top: 8px; font-size: 13px; list-style: none; }
+  .dates li { padding: 2px 0; }
+  .dates .d { font-family: 'DM Mono', monospace; color: var(--accent-dark); }
+  .past { color: var(--faint); }
+  .src { margin-top: 8px; font-size: 12px; word-break: break-all; }
+  .src a { color: var(--accent); }
+  .id { white-space: nowrap; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--faint); }
+  dl.defs { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; font-size: 14px; }
+  dl.defs dt { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent-dark); padding-top: 2px; }
+  .method p { font-size: 14px; color: var(--muted); margin-bottom: 10px; max-width: 780px; }
+  footer { margin: 40px 0 0; padding: 20px 0 32px; border-top: 1px solid var(--rule); font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+  @media (max-width: 600px) {
+    dl.defs { grid-template-columns: 1fr; }
+    .count { margin-left: 0; }
+    select, input[type=search] { min-width: 0; width: 100%; }
+    .filters label { flex: 1 1 140px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Forward Notice</div>
+    <h1>Tokenisation and Digital Payment Regulation</h1>
+    <p>A monthly register of the rules that create deadlines or obligations for blockchain infrastructure vendors: oracle networks, cross-chain interoperability, proof-of-reserve and NAV reporting, and tokenised fund workflow. Each entry says whether the rule binds the vendor directly, reaches it through regulated customers, creates demand, or constrains design.</p>
+    <div class="meta"><span id="updated"></span><span id="countAll"></span><span>Primary sources only</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>Next six months</h2>
+    <p class="sub">Dated milestones within six months of the update date, in date order.</p>
+    <ul class="timeline" id="soon"></ul>
+  </section>
+
+  <section>
+    <h2>Changed this update</h2>
+    <p class="sub">Entries added or amended at the latest update.</p>
+    <ul class="changes" id="changes"></ul>
+  </section>
+
+  <section>
+    <h2>Register</h2>
+    <p class="sub">Filter by jurisdiction, effect on vendors, or horizon to the next dated milestone.</p>
+    <div class="filters">
+      <label>Jurisdiction<select id="fJur"><option value="">All</option></select></label>
+      <label>Vendor effect<select id="fEff"><option value="">All</option></select></label>
+      <label>Horizon<select id="fHor"><option value="">All</option></select></label>
+      <label>Search<input type="search" id="fQ" placeholder="Instrument, body, note"></label>
+      <span class="count" id="shown"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="method">
+    <h2>How to read this</h2>
+    <dl class="defs" id="defs"></dl>
+    <p style="margin-top:16px">Horizon is measured from the update date to the next dated milestone: 0-6m, 6-18m, 18m+, or no future date where an instrument already applies and no further milestone is confirmed.</p>
+    <p>Every date is taken from the regulator, legislature, official journal or standard setter. Where a source gives a relative deadline (for example, 60 days after Federal Register publication), the register records it as stated rather than calculating a date. Confidence reflects how firmly the primary source supports the entry.</p>
+    <p>This register describes regulation in general terms for infrastructure vendors as a class. It is not legal advice, and whether a rule applies to any specific firm depends on what that firm actually does and where.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>daletimwood.github.io/DeFi-Bootcamp/forward-notice</span><span id="foot"></span></div>
+</footer>
+
+<script id="register" type="application/json">{"title":"Forward Notice: Tokenisation and Digital Payment Regulation","last_updated":"2026-10-10","status_as_of":"2026-10-10","scope":"Regulation that creates deadlines or obligations for blockchain infrastructure vendors: oracle networks, cross-chain interoperability, proof-of-reserve and NAV reporting, tokenised fund workflow.","definitions":{"direct":"May regulate the vendor's own activity or designation.","passed down via customers":"A regulated customer must demand controls or contract terms from its vendors.","demand driver":"Creates a use case without imposing a vendor obligation.","constraint":"Limits how a vendor can design, price or operate, or leaves the perimeter unsettled."},"items":[{"id":"FN-001","jurisdiction":"US","instrument":"GENIUS Act (payment stablecoins)","body":"Congress","stage":"adopted","key_dates":[{"type":"adoption","date":"2025-07-18","note":"Enacted"},{"type":"application","date":"2027-01-18","note":"Earlier of this date (18 months after enactment) or 120 days after final implementing rules"},{"type":"other","date":"2028-07-18","note":"Section 3: digital asset service providers may not offer or sell a payment stablecoin in the US unless issued by a permitted issuer"}],"who_is_obliged":"Payment stablecoin issuers; digital asset service providers offering or selling stablecoins","vendor_effect":"passed down via customers","vendor_effect_note":"Issuers carry the reserve, monthly disclosure and examination duties; infrastructure vendors meet them through issuer contracts unless they themselves offer or sell stablecoins.","horizon":"0-6m","confidence":"high","sources":["https://congress.gov/bill/119th-congress/senate-bill/1582/text","https://www.govinfo.gov/content/pkg/FR-2026-08-18/pdf/2026-16796.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-002","jurisdiction":"US","instrument":"OCC proposed rule implementing GENIUS Act for OCC-supervised issuers","body":"OCC","stage":"consultation","key_dates":[{"type":"other","date":"2026-02-25","note":"Proposal published (OCC Bulletin 2026-3); comment close not independently confirmed"}],"who_is_obliged":"OCC-supervised payment stablecoin issuers and applicants","vendor_effect":"passed down via customers","vendor_effect_note":"Reserve, custody and control requirements on issuers are likely to flow into vendor contracts once final.","horizon":"no future date","confidence":"medium","sources":["https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-3.html"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-003","jurisdiction":"US","instrument":"FDIC proposed rule implementing GENIUS Act for FDIC-supervised issuers","body":"FDIC","stage":"consultation","key_dates":[{"type":"other","date":"2026-04-10","note":"Published in the Federal Register; comments due 60 days after publication, calendar date not independently confirmed"}],"who_is_obliged":"FDIC-supervised payment stablecoin issuers and insured depository institutions","vendor_effect":"passed down via customers","vendor_effect_note":"Issuer-level requirements; vendors affected through due diligence and contract terms.","horizon":"no future date","confidence":"medium","sources":["https://www.fdic.gov/news/financial-institution-letters/2026/notice-proposed-rulemaking-establish-genius-act","https://www.federalregister.gov/documents/2026/04/10/2026-06974/genius-act-requirements-and-standards-for-fdic-supervised-permitted-payment-stablecoin-issuers-and"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-004","jurisdiction":"US","instrument":"Federal Reserve proposed rule implementing GENIUS Act for Board-supervised issuers","body":"Federal Reserve Board","stage":"consultation","key_dates":[{"type":"consultation close","date":"2026-11-30","note":"Comments must be received by 30 November 2026"}],"who_is_obliged":"Board-supervised permitted payment stablecoin issuers and custodians","vendor_effect":"passed down via customers","vendor_effect_note":"Covers reserves, custodians, rehypothecation and yield arrangements with third parties; a reported reference to smart-contract and blockchain-monitoring providers could not be confirmed in the published text.","horizon":"0-6m","confidence":"medium","sources":["https://www.federalregister.gov/documents/2026/09/29/2026-19860/implementing-the-federal-reserve-boards-responsibilities-under-the-genius-act"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-005","jurisdiction":"US","instrument":"Treasury proposed rule on GENIUS Act section 3 (offering and issuance restrictions)","body":"US Treasury","stage":"consultation","key_dates":[{"type":"consultation close","date":"2026-10-19","note":"Comments on or before 19 October 2026"},{"type":"other","date":"2028-07-18","note":"Statutory restriction on digital asset service providers offering unpermitted stablecoins"}],"who_is_obliged":"Issuers and digital asset service providers that offer or sell payment stablecoins","vendor_effect":"direct","vendor_effect_note":"Can apply directly to a vendor that itself offers or sells stablecoins to US persons; otherwise not.","horizon":"0-6m","confidence":"high","sources":["https://www.govinfo.gov/content/pkg/FR-2026-08-18/pdf/2026-16796.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-006","jurisdiction":"US","instrument":"Treasury report to Congress on technologies to counter illicit finance in digital assets","body":"US Treasury","stage":"adopted","key_dates":[{"type":"other","date":"2026-03-01","note":"Report published March 2026; not a binding rule"}],"who_is_obliged":"None directly","vendor_effect":"demand driver","vendor_effect_note":"Discusses tracing across bridges and tracking smart contracts, signalling demand for transfer data and monitoring rather than imposing duties.","horizon":"no future date","confidence":"high","sources":["https://home.treasury.gov/system/files/246/GENIUS-Act-Illicit-Finance-Innovation-Congressional-Report-March-2026.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-007","jurisdiction":"US","instrument":"Digital Asset Market Clarity Act (H.R. 3633)","body":"Congress","stage":"proposed","key_dates":[{"type":"other","date":"2025-05-29","note":"Introduced; no enacted application date"}],"who_is_obliged":"Would depend on final text","vendor_effect":"constraint","vendor_effect_note":"Market-structure perimeter for digital commodities, blockchain systems and DeFi still unsettled; no enacted oracle or interoperability licence.","horizon":"no future date","confidence":"medium","sources":["https://www.congress.gov/bill/119th-congress/house-bill/3633/text"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-008","jurisdiction":"US","instrument":"SEC interpretation of securities laws for certain cryptoassets, joined by the CFTC","body":"SEC / CFTC","stage":"in force","key_dates":[{"type":"adoption","date":"2026-03-17","note":"Interpretation issued with token taxonomy"}],"who_is_obliged":"Persons undertaking securities or commodities activities","vendor_effect":"constraint","vendor_effect_note":"Sets a token taxonomy (including digital commodities and when an investment contract attaches); it does not classify every token as a commodity or name individual tokens in the release.","horizon":"no future date","confidence":"high","sources":["https://www.cftc.gov/PressRoom/PressReleases/9198-26"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-009","jurisdiction":"US","instrument":"SEC innovation exemption for tokenized-stock venues","body":"SEC","stage":"in force","key_dates":[{"type":"adoption","date":"2026-09-17","note":"Temporary, conditional exemptive relief; permanent rulemaking date not confirmed"}],"who_is_obliged":"Qualifying venues and covered liquidity providers","vendor_effect":"demand driver","vendor_effect_note":"Opens a defined set of tokenized-stock venues that need pricing, settlement and corporate-action data.","horizon":"no future date","confidence":"high","sources":["https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-010","jurisdiction":"US","instrument":"CFTC proposed rule including certain event contracts in the definition of swap","body":"CFTC","stage":"consultation","key_dates":[{"type":"other","date":"2026-10-09","note":"Proposed; comments due 30 days after Federal Register publication, calendar date not yet set"}],"who_is_obliged":"Event-contract venues and intermediaries, if adopted","vendor_effect":"demand driver","vendor_effect_note":"Would bring sports, political, cultural and weather event contracts into swap regulation, raising the bar for resolution data integrity.","horizon":"no future date","confidence":"high","sources":["https://www.cftc.gov/PressRoom/PressReleases/9310-26"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-011","jurisdiction":"US","instrument":"CFTC approval of KalshiEX BTCPERP and policy on listing perpetual contracts","body":"CFTC","stage":"in force","key_dates":[{"type":"adoption","date":"2026-05-29","note":"BTCPERP approved"},{"type":"adoption","date":"2026-06-03","note":"Policy statement on perpetual contract listings"}],"who_is_obliged":"Designated contract markets and applicants","vendor_effect":"demand driver","vendor_effect_note":"Case-by-case approval of perpetuals increases demand for reliable spot reference prices; approval does not extend to any feed or on-chain venue.","horizon":"no future date","confidence":"high","sources":["https://www.cftc.gov/PressRoom/PressReleases/9240-26","https://www.federalregister.gov/documents/2026/06/03/2026-11020/policy-statement-concerning-the-listing-of-perpetual-contracts"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-012","jurisdiction":"US","instrument":"OFAC sanctions guidance specific to bridges or smart-contract infrastructure","body":"OFAC / Treasury","stage":"proposed","key_dates":[],"who_is_obliged":"Not established","vendor_effect":"constraint","vendor_effect_note":"No bridge- or oracle-specific OFAC rule since 2025 could be confirmed; general sanctions screening applies wherever a vendor performs a controlled service.","horizon":"no future date","confidence":"low","sources":["https://home.treasury.gov/system/files/246/GENIUS-Act-Illicit-Finance-Innovation-Congressional-Report-March-2026.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-013","jurisdiction":"EU","instrument":"MiCA CASP transitional period (Article 143) and MiCA review","body":"EU institutions / European Commission","stage":"in force","key_dates":[{"type":"transition end","date":"2026-07-01","note":"Latest end of CASP grandfathering; member states could shorten it"},{"type":"consultation close","date":"2026-08-31","note":"MiCA review targeted consultation, including questions on DeFi protocol and smart-contract certification"}],"who_is_obliged":"Cryptoasset service providers; potentially DeFi actors in future","vendor_effect":"constraint","vendor_effect_note":"Customers must now hold national CASP authorisation; DeFi certification is a question in consultation, not an adopted rule.","horizon":"no future date","confidence":"high","sources":["https://www.esma.europa.eu/publications-and-data/interactive-single-rulebook/mica/article-143-transitional-measures","https://finance.ec.europa.eu/document/download/62be7015-f066-4fac-b74e-71bacdbcc9f5_en?filename=2026-mica-review-targeted-consultation-document_en.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-014","jurisdiction":"EU","instrument":"DORA Articles 28 to 30 (ICT third-party contract terms)","body":"EU institutions / ESAs","stage":"in force","key_dates":[{"type":"application","date":"2025-01-17","note":"DORA applies"}],"who_is_obliged":"Financial entities","vendor_effect":"passed down via customers","vendor_effect_note":"Banks and other financial entities must write service levels, security, incident support, audit and exit terms into contracts with ICT vendors, whether or not the vendor is designated.","horizon":"no future date","confidence":"high","sources":["https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2554"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-015","jurisdiction":"EU","instrument":"DORA critical ICT third-party provider designations","body":"ESAs (EBA, EIOPA, ESMA)","stage":"in force","key_dates":[{"type":"adoption","date":"2025-11-18","note":"First designations published; next round not confirmed"}],"who_is_obliged":"Designated critical ICT third-party providers","vendor_effect":"direct","vendor_effect_note":"Direct oversight applies only to named designees; no blockchain oracle or interoperability provider has been confirmed on the list.","horizon":"no future date","confidence":"high","sources":["https://www.esma.europa.eu/press-news/esma-news/european-supervisory-authorities-designate-critical-ict-third-party-providers"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-016","jurisdiction":"EU","instrument":"Revised Benchmarks Regulation (EU) 2025/914","body":"EU institutions / ESMA","stage":"in force","key_dates":[{"type":"application","date":"2026-01-01","note":"Revised, narrower scope applies"}],"who_is_obliged":"Administrators of critical and significant benchmarks, specified climate and commodity benchmarks","vendor_effect":"direct","vendor_effect_note":"An on-chain reference used to determine payments or values of financial instruments needs a product-level perimeter test; the significant-benchmark threshold is EUR 50 billion.","horizon":"no future date","confidence":"high","sources":["https://eur-lex.europa.eu/eli/reg/2025/914/oj","https://www.esma.europa.eu/esmas-activities/investors-and-issuers/benchmark-administrators"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-017","jurisdiction":"EU","instrument":"Transfer of Funds Regulation (EU) 2023/1113 (travel rule)","body":"EU institutions","stage":"in force","key_dates":[{"type":"application","date":"2024-12-30","note":"Applies"}],"who_is_obliged":"CASPs and payment service providers","vendor_effect":"passed down via customers","vendor_effect_note":"Originator and beneficiary data must travel with covered transfers, including from self-hosted addresses; messaging vendors may receive data specifications from CASPs.","horizon":"no future date","confidence":"high","sources":["https://eur-lex.europa.eu/eli/reg/2023/1113/oj/eng"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-018","jurisdiction":"EU","instrument":"Anti-Money Laundering Regulation (EU) 2024/1624 and AMLA","body":"EU institutions / AMLA","stage":"adopted","key_dates":[{"type":"application","date":"2027-07-10","note":"AMLR general application; AMLA self-hosted address guidelines indicated"},{"type":"other","date":"2028-01-01","note":"AMLA planned start of direct supervision of selected entities (year only)"}],"who_is_obliged":"CASPs and other obliged entities","vendor_effect":"passed down via customers","vendor_effect_note":"No anonymous cryptoasset accounts and risk mitigation for self-hosted addresses; vendors see screening and data specifications from obliged customers.","horizon":"6-18m","confidence":"high","sources":["https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1624"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-019","jurisdiction":"EU","instrument":"Digital euro legislative proposal","body":"European Parliament / Council","stage":"proposed","key_dates":[{"type":"other","date":"2026-07-09","note":"Parliament mandate to begin negotiations; application date not set"}],"who_is_obliged":"Would depend on enacted text","vendor_effect":"demand driver","vendor_effect_note":"Future retail CBDC creates interoperability questions but no current vendor obligation.","horizon":"no future date","confidence":"high","sources":["https://www.europarl.europa.eu/pdfs/news/expert/2026/7/press_release/20260708IPR46377/20260708IPR46377_en.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-020","jurisdiction":"EU","instrument":"DLT Pilot Regime and ECB Pontes wholesale DLT settlement","body":"EU institutions / ESMA / ECB","stage":"in force","key_dates":[{"type":"application","date":"2023-03-23","note":"DLT Pilot applies"},{"type":"other","date":"2026-09-21","note":"Pontes launch reported by ECB"}],"who_is_obliged":"Authorised DLT market infrastructures and participants","vendor_effect":"demand driver","vendor_effect_note":"Central bank money settlement for DLT transactions creates integration demand between ledgers; no mandatory vendor certification.","horizon":"no future date","confidence":"medium","sources":["https://www.ecb.europa.eu/paym/target/pontes/html/index.en.html","https://www.esma.europa.eu/document/report-dlt-pilot-regime"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-021","jurisdiction":"UK","instrument":"New cryptoasset regulated activities and FCA perimeter guidance (PS26/18)","body":"HM Treasury / FCA","stage":"adopted","key_dates":[{"type":"application","date":"2027-10-25","note":"New FSMA cryptoasset regulated activities commence"}],"who_is_obliged":"Firms performing specified UK cryptoasset activities","vendor_effect":"direct","vendor_effect_note":"Infrastructure, APIs and data feeds are not automatically regulated; authorisation turns on performing an in-scope activity such as custody or operating a trading platform.","horizon":"6-18m","confidence":"high","sources":["https://www.fca.org.uk/publication/policy/ps26-18.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-022","jurisdiction":"UK","instrument":"FCA stablecoin issuance rules (PS26/10)","body":"FCA","stage":"adopted","key_dates":[{"type":"application","date":"2027-10-25","note":"Applies with the new regulated activities regime"}],"who_is_obliged":"UK stablecoin issuers","vendor_effect":"passed down via customers","vendor_effect_note":"Independent reasonable-assurance review of backing, disclosure and outsourcing controls create demand for assurance-ready reserve data.","horizon":"6-18m","confidence":"high","sources":["https://www.fca.org.uk/publication/policy/ps26-10.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-023","jurisdiction":"UK","instrument":"Bank of England systemic sterling stablecoin policy and draft Code","body":"Bank of England","stage":"consultation","key_dates":[{"type":"consultation close","date":"2026-09-22","note":"Code consultation closed"},{"type":"adoption","date":"2026-12-31","note":"Intended finalisation by end-2026; not an application date"}],"who_is_obliged":"Systemic sterling stablecoin issuers recognised by HM Treasury","vendor_effect":"passed down via customers","vendor_effect_note":"Systemic issuer standards will shape what issuers require of reserve, reporting and settlement providers.","horizon":"0-6m","confidence":"high","sources":["https://www.bankofengland.co.uk/paper/2026/ps/sterling-denominated-systemic-stablecoin"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-024","jurisdiction":"UK","instrument":"Critical Third Parties (Designation) Regulations 2026 (SI 2026/777)","body":"HM Treasury / Bank of England / PRA / FCA","stage":"in force","key_dates":[{"type":"application","date":"2026-07-13","note":"Four designations take effect"}],"who_is_obliged":"Amazon Web Services EMEA SARL, Google Cloud EMEA Limited, Microsoft Ireland Operations Limited, Oracle Corporation UK Limited","vendor_effect":"direct","vendor_effect_note":"Applies only to the four named cloud providers; Oracle Corporation UK Limited is a database company, not a blockchain oracle. No blockchain provider designated.","horizon":"no future date","confidence":"high","sources":["https://www.legislation.gov.uk/uksi/2026/777/made"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-025","jurisdiction":"UK","instrument":"UK Benchmarks Regulation reform consultation","body":"HM Treasury / FCA","stage":"consultation","key_dates":[{"type":"other","date":"2026-10-06","note":"FCA statement welcoming consultation; close and commencement not confirmed"}],"who_is_obliged":"Benchmark administrators","vendor_effect":"direct","vendor_effect_note":"A reformed UK perimeter could change whether data used to settle financial contracts is administered as a benchmark.","horizon":"no future date","confidence":"medium","sources":["https://www.fca.org.uk/news/statements/fca-welcomes-reform-uk-benchmarks-regulation"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-026","jurisdiction":"UK","instrument":"Digital Securities Sandbox and Synchronisation Lab","body":"Bank of England / FCA","stage":"in force","key_dates":[{"type":"other","date":"2026-06-30","note":"Sandbox participants may apply to use certain stablecoins as settlement assets"}],"who_is_obliged":"Approved participants","vendor_effect":"demand driver","vendor_effect_note":"Live testing of synchronised ledger and central bank money settlement (the Synchronisation Lab runs about six months from spring 2026, end date not confirmed) creates integration demand from participants.","horizon":"no future date","confidence":"medium","sources":["https://www.bankofengland.co.uk/financial-stability/digital-securities-sandbox/digital-securities-sandbox-dashboard","https://www.bankofengland.co.uk/payments/rtgs-future-roadmap/synchro-lab"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-027","jurisdiction":"Singapore","instrument":"Digital Token Service Provider regime","body":"MAS","stage":"in force","key_dates":[{"type":"application","date":"2025-06-30","note":"Applies"}],"who_is_obliged":"Singapore-based providers serving customers solely outside Singapore, for in-scope services","vendor_effect":"direct","vendor_effect_note":"Applies only if a vendor provides a regulated digital token service; utility or governance token services are outside scope.","horizon":"no future date","confidence":"high","sources":["https://www.mas.gov.sg/news/media-releases/2025/mas-clarifies-regulatory-regime-for-digital-token-service-providers"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-028","jurisdiction":"Singapore","instrument":"Stablecoin framework legislation consultation and Project Guardian","body":"MAS","stage":"consultation","key_dates":[],"who_is_obliged":"Prospective stablecoin issuers; Guardian participants","vendor_effect":"demand driver","vendor_effect_note":"Guardian sets industry practice for tokenized funds and interoperability; stablecoin legislation timing not confirmed.","horizon":"no future date","confidence":"medium","sources":["https://www.mas.gov.sg/news/media-releases/2026/mas-consults-on-legislative-amendments-to-implement-stablecoin-regulatory-framework","https://www.mas.gov.sg/schemes-and-initiatives/project-guardian"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-029","jurisdiction":"Hong Kong","instrument":"Stablecoins Ordinance (Cap. 656) issuer licensing","body":"HKMA","stage":"in force","key_dates":[{"type":"other","date":"2026-04-10","note":"Licence effective date shown on public register for a licensed issuer; not a general deadline"}],"who_is_obliged":"Licensed and prospective stablecoin issuers","vendor_effect":"passed down via customers","vendor_effect_note":"Licensed issuers carry reserve and redemption duties that pass to their infrastructure suppliers.","horizon":"no future date","confidence":"medium","sources":["https://www.hkma.gov.hk/eng/regulatory-resources/registers/register-of-licensed-stablecoin-issuers/"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-030","jurisdiction":"Hong Kong","instrument":"SFC tokenisation circular and HKMA Project Ensemble","body":"SFC / HKMA","stage":"in force","key_dates":[{"type":"other","date":"2025-11-13","note":"Ensemble next phase for real-value tokenised deposit transactions"}],"who_is_obliged":"Product providers and supervised intermediaries","vendor_effect":"demand driver","vendor_effect_note":"Product providers stay responsible for tokenised product arrangements; Ensemble drives tokenised deposit interoperability.","horizon":"no future date","confidence":"medium","sources":["https://apps.sfc.hk/edistributionWeb/gateway/EN/circular/doc?refNo=23EC53","https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/11/20251113-3"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-031","jurisdiction":"UAE","instrument":"CBUAE Payment Token Services Regulation and VARA Virtual Asset Issuance Rulebook","body":"CBUAE / VARA","stage":"in force","key_dates":[],"who_is_obliged":"Payment token service providers and in-scope issuers","vendor_effect":"passed down via customers","vendor_effect_note":"Direct only for a vendor performing a covered payment-token or issuance service.","horizon":"no future date","confidence":"medium","sources":["https://rulebook.centralbank.ae/en/rulebook/payment-token-services-regulation","https://rulebooks.vara.ae/rulebook/virtual-asset-issuance-rulebook"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-032","jurisdiction":"UAE","instrument":"ADGM FSRA virtual asset staking framework","body":"ADGM FSRA","stage":"adopted","key_dates":[{"type":"adoption","date":"2026-04-29","note":"Framework finalised"}],"who_is_obliged":"Authorised firms offering client staking","vendor_effect":"passed down via customers","vendor_effect_note":"Duties fall on authorised intermediaries, not on staking or node infrastructure generally.","horizon":"no future date","confidence":"high","sources":["https://www.adgm.com/media/announcements/adgm-fsra-finalises-regulatory-framework-for-the-staking-of-virtual-assets"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-033","jurisdiction":"Switzerland","instrument":"FINMA Guidance 01/2026 on custody of crypto-based assets","body":"FINMA","stage":"in force","key_dates":[{"type":"adoption","date":"2026-01-12","note":"Published"}],"who_is_obliged":"FINMA-supervised institutions using custodians","vendor_effect":"passed down via customers","vendor_effect_note":"Supervised firms stay responsible when using external or foreign custodians, so subcontractor controls flow to vendors.","horizon":"no future date","confidence":"high","sources":["https://www.finma.ch/en/news/2026/01/20260112-mm-am-01-26"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-034","jurisdiction":"International","instrument":"Basel prudential treatment of cryptoasset exposures (SCO60)","body":"Basel Committee","stage":"in force","key_dates":[{"type":"application","date":"2026-01-01","note":"Framework version effective; national implementation varies"}],"who_is_obliged":"Banks, via national implementation","vendor_effect":"demand driver","vendor_effect_note":"Supervisors can add capital for weak technological infrastructure (add-on currently zero), so banks need evidence on settlement finality and reference-price controls.","horizon":"no future date","confidence":"high","sources":["https://www.bis.org/committees/bcbs/basel-framework/81565/chapter.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-035","jurisdiction":"International","instrument":"FATF targeted report on decentralised finance","body":"FATF","stage":"adopted","key_dates":[{"type":"adoption","date":"2026-07-01","note":"Published July 2026 (month only)"}],"who_is_obliged":"National authorities; persons with control or sufficient influence over DeFi arrangements under local law","vendor_effect":"constraint","vendor_effect_note":"Control tests look at upgrade and governance powers, and the report names chain-hopping and bridges as illicit-finance techniques; not a licence in itself.","horizon":"no future date","confidence":"high","sources":["https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/targeted-report-decentralised-finance-2026.pdf.coredownload.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]},{"id":"FN-036","jurisdiction":"International","instrument":"FSB peer review, IOSCO tokenisation report and CPMI-IOSCO stablecoin guidance","body":"FSB / IOSCO / CPMI","stage":"adopted","key_dates":[{"type":"adoption","date":"2025-10-01","note":"FSB thematic peer review (month only)"},{"type":"adoption","date":"2025-11-10","note":"IOSCO Tokenization of Financial Assets"}],"who_is_obliged":"National authorities","vendor_effect":"demand driver","vendor_effect_note":"Signals supervisory scrutiny of governance and dependencies in tokenisation; no binding cross-chain provider rule.","horizon":"no future date","confidence":"medium","sources":["https://www.fsb.org/2025/10/thematic-review-on-fsb-global-regulatory-framework-for-crypto-asset-activities","https://www.iosco.org/library/pubdocs/pdf/IOSCOPD809.pdf"],"last_verified":"2026-10-10","change_log":[{"date":"2026-10-10","change":"Baseline entry"}]}]}</script>
+<script>
+(function () {
+  var R = JSON.parse(document.getElementById('register').textContent);
+  var items = R.items;
+  var upd = new Date(R.last_updated + 'T00:00:00Z');
+  var DAY = 86400000;
+  function fmt(iso) {
+    var d = new Date(iso + 'T00:00:00Z');
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+  }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  document.getElementById('updated').textContent = 'Updated ' + fmt(R.last_updated);
+  document.getElementById('countAll').textContent = items.length + ' instruments';
+  document.getElementById('foot').textContent = 'Status as of ' + fmt(R.status_as_of || R.last_updated);
+
+  // Next six months
+  var soon = [];
+  items.forEach(function (it) {
+    it.key_dates.forEach(function (k) {
+      var d = new Date(k.date + 'T00:00:00Z');
+      var days = (d - upd) / DAY;
+      if (days >= 0 && days <= 183) soon.push({ it: it, k: k });
+    });
+  });
+  soon.sort(function (a, b) { return a.k.date < b.k.date ? -1 : 1; });
+  var ul = document.getElementById('soon');
+  if (!soon.length) ul.appendChild(el('li', null, 'No dated milestones in the next six months.'));
+  soon.forEach(function (s) {
+    var li = el('li');
+    var top = el('div');
+    top.appendChild(el('span', 'tdate', fmt(s.k.date)));
+    top.appendChild(el('span', 'ttype', s.k.type + ' · ' + s.it.jurisdiction));
+    li.appendChild(top);
+    li.appendChild(el('div', 'ttitle', s.it.instrument));
+    if (s.k.note) li.appendChild(el('div', 'tnote', s.k.note));
+    ul.appendChild(li);
+  });
+
+  // Changed this update
+  var ch = document.getElementById('changes');
+  var changed = [];
+  items.forEach(function (it) {
+    it.change_log.forEach(function (c) { if (c.date === R.last_updated) changed.push({ it: it, c: c }); });
+  });
+  var baseline = changed.length && changed.every(function (x) { return x.c.change === 'Baseline entry'; });
+  if (!changed.length) ch.appendChild(el('li', null, 'No changes at this update.'));
+  else if (baseline) ch.appendChild(el('li', null, 'Baseline published with ' + changed.length + ' instruments. Future updates will list each change here.'));
+  else changed.forEach(function (x) {
+    var li = el('li');
+    li.appendChild(el('strong', null, x.it.instrument + ': '));
+    li.appendChild(document.createTextNode(x.c.change));
+    ch.appendChild(li);
+  });
+
+  // Filters
+  function uniq(key) { var s = {}; items.forEach(function (i) { s[i[key]] = 1; }); return Object.keys(s); }
+  function fill(id, vals) { var sel = document.getElementById(id); vals.forEach(function (v) { var o = el('option', null, v); o.value = v; sel.appendChild(o); }); }
+  fill('fJur', uniq('jurisdiction'));
+  fill('fEff', uniq('vendor_effect').sort());
+  fill('fHor', ['0-6m', '6-18m', '18m+', 'no future date'].filter(function (h) { return uniq('horizon').indexOf(h) > -1; }));
+
+  var grid = document.getElementById('grid');
+  function render() {
+    var j = document.getElementById('fJur').value, e = document.getElementById('fEff').value,
+        h = document.getElementById('fHor').value, q = document.getElementById('fQ').value.toLowerCase();
+    grid.innerHTML = '';
+    var n = 0;
+    items.forEach(function (it) {
+      if (j && it.jurisdiction !== j) return;
+      if (e && it.vendor_effect !== e) return;
+      if (h && it.horizon !== h) return;
+      if (q && (it.instrument + ' ' + it.body + ' ' + it.vendor_effect_note + ' ' + it.who_is_obliged).toLowerCase().indexOf(q) < 0) return;
+      n++;
+      var c = el('article', 'item' + (it.horizon === '0-6m' ? ' h06' : it.horizon === '6-18m' ? ' h618' : ''));
+      var top = el('div', 'top');
+      top.appendChild(el('span', 'tag plain', it.jurisdiction));
+      top.appendChild(el('span', 'tag', it.vendor_effect));
+      top.appendChild(el('span', 'tag' + (it.horizon === '0-6m' ? ' soon' : ' plain'), it.horizon));
+      top.appendChild(el('span', 'tag plain', it.stage));
+      top.appendChild(el('span', 'tag plain', 'confidence: ' + it.confidence));
+      c.appendChild(top);
+      c.appendChild(el('h3', null, it.instrument));
+      c.appendChild(el('div', 'body-line', it.body + ' · Obliges: ' + it.who_is_obliged));
+      c.appendChild(el('p', 'effect', it.vendor_effect_note));
+      if (it.key_dates.length) {
+        var dl = el('ul', 'dates');
+        it.key_dates.forEach(function (k) {
+          var li = el('li', k.date < R.last_updated ? 'past' : null);
+          li.appendChild(el('span', 'd', fmt(k.date)));
+          li.appendChild(document.createTextNode('  ' + k.type + (k.note ? ': ' + k.note : '')));
+          dl.appendChild(li);
+        });
+        c.appendChild(dl);
+      }
+      var src = el('div', 'src');
+      it.sources.forEach(function (u, i) {
+        if (i) src.appendChild(document.createTextNode(' · '));
+        var a = el('a', null, u.replace(/^https?:\/\//, '').split('/')[0]);
+        a.href = u; a.target = '_blank'; a.rel = 'noopener';
+        src.appendChild(a);
+      });
+      src.appendChild(el('span', 'id', '  ' + it.id + ' · verified ' + fmt(it.last_verified)));
+      c.appendChild(src);
+      grid.appendChild(c);
+    });
+    document.getElementById('shown').textContent = n + ' of ' + items.length + ' shown';
+  }
+  ['fJur', 'fEff', 'fHor'].forEach(function (id) { document.getElementById(id).addEventListener('change', render); });
+  document.getElementById('fQ').addEventListener('input', render);
+  render();
+
+  var defs = document.getElementById('defs');
+  Object.keys(R.definitions).forEach(function (k) { defs.appendChild(el('dt', null, k)); defs.appendChild(el('dd', null, R.definitions[k])); });
+})();
+</script>
+</body>
+</html>
