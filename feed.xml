@@ -12,6 +12,14 @@
     <itunes:category text="Business"/>
     <itunes:category text="Investing"/>
     <item>
+      <title>DeFi Digest — Sunday, October 25, 2026</title>
+      <description>Covering: The Defiant &lt;no-reply@mail.thedefiant.io&gt;, "Alex Thorn, Galaxy Research" &lt;alex.thorn@galaxy.com&gt;, Talos Team &lt;newsletter@talos.com&gt;, OMFIF &lt;noreply@omfif.org&gt;</description>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Sun, 25 Oct 2026 08:22:40 +0000</pubDate>
+      <guid isPermaLink="false">defi-digest-2026-10-25</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/defi-2026-10-25.mp3" type="audio/mpeg" length="4823136"/>
+    </item>
+    <item>
       <title>DeFi Digest — Saturday, October 24, 2026</title>
       <description>Covering: Trade Finance Global &lt;talks@tradefinanceglobal.com&gt;, The Defiant &lt;no-reply@mail.thedefiant.io&gt;</description>
       <itunes:episodeType>full</itunes:episodeType>
