@@ -1,7 +1,7 @@
 {
   "title": "Forward Notice: Tokenisation and Digital Payment Regulation",
-  "last_updated": "2026-10-10",
-  "status_as_of": "2026-10-10",
+  "last_updated": "2026-11-01",
+  "status_as_of": "2026-11-01",
   "scope": "Regulation that creates deadlines or obligations for blockchain infrastructure vendors: oracle networks, cross-chain interoperability, proof-of-reserve and NAV reporting, tokenised fund workflow.",
   "definitions": {
     "direct": "May regulate the vendor's own activity or designation.",
@@ -53,29 +53,44 @@
     {
       "id": "FN-002",
       "jurisdiction": "US",
-      "instrument": "OCC proposed rule implementing GENIUS Act for OCC-supervised issuers",
+      "instrument": "OCC final rule implementing GENIUS Act for OCC-supervised issuers",
       "body": "OCC",
-      "stage": "consultation",
+      "stage": "adopted",
       "key_dates": [
         {
           "type": "other",
           "date": "2026-02-25",
-          "note": "Proposal published (OCC Bulletin 2026-3); comment close not independently confirmed"
+          "note": "Proposal published (OCC Bulletin 2026-3)"
+        },
+        {
+          "type": "adoption",
+          "date": "2026-10-21",
+          "note": "Final rule announced (OCC News Release 2026-92); BSA/AML and OFAC sanctions rules to follow in a separate rulemaking coordinated with Treasury"
+        },
+        {
+          "type": "application",
+          "date": "2027-01-18",
+          "note": "Final rule and GENIUS Act take effect; date for OCC to begin accepting applications not yet announced"
         }
       ],
       "who_is_obliged": "OCC-supervised payment stablecoin issuers and applicants",
       "vendor_effect": "passed down via customers",
-      "vendor_effect_note": "Reserve, custody and control requirements on issuers are likely to flow into vendor contracts once final.",
-      "horizon": "no future date",
-      "confidence": "medium",
+      "vendor_effect_note": "Final reserve, redemption, risk-management and custody standards for OCC-supervised issuers and custodians will flow into vendor contracts ahead of the January 2027 effective date.",
+      "horizon": "0-6m",
+      "confidence": "high",
       "sources": [
-        "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-3.html"
+        "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-3.html",
+        "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-92.html"
       ],
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-11-01",
       "change_log": [
         {
           "date": "2026-10-10",
           "change": "Baseline entry"
+        },
+        {
+          "date": "2026-11-01",
+          "change": "Stage moved from consultation to adopted: final rule announced 21 Oct 2026, effective 18 Jan 2027"
         }
       ]
     },
@@ -1089,6 +1104,206 @@
         {
           "date": "2026-10-10",
           "change": "Baseline entry"
+        }
+      ]
+    },
+    {
+      "id": "FN-037",
+      "jurisdiction": "US",
+      "instrument": "SEC proposed Regulation Crypto Assets (File No. S7-2026-27)",
+      "body": "SEC",
+      "stage": "consultation",
+      "key_dates": [
+        {
+          "type": "other",
+          "date": "2026-08-21",
+          "note": "Published in Federal Register"
+        },
+        {
+          "type": "consultation close",
+          "date": "2026-10-20",
+          "note": "Comment period closed; final rule date not set"
+        }
+      ],
+      "who_is_obliged": "Issuers, intermediaries and trading venues for crypto assets subject to SEC jurisdiction",
+      "vendor_effect": "constraint",
+      "vendor_effect_note": "Final rule will set how crypto assets are offered and traded under securities law; shapes which tokenised products customers can launch and what disclosure data they need from vendors.",
+      "horizon": "no future date",
+      "confidence": "medium",
+      "sources": [
+        "https://www.sec.gov/rules-regulations/2026/08/s7-2026-27"
+      ],
+      "last_verified": "2026-11-01",
+      "change_log": [
+        {
+          "date": "2026-11-01",
+          "change": "New entry"
+        }
+      ]
+    },
+    {
+      "id": "FN-038",
+      "jurisdiction": "US",
+      "instrument": "CFTC ANPRM on retail crypto asset transactions and a crypto asset market DCM subcategory",
+      "body": "CFTC",
+      "stage": "consultation",
+      "key_dates": [
+        {
+          "type": "other",
+          "date": "2026-10-05",
+          "note": "ANPRM announced (Press Release 9307-26); 91 FR 64811"
+        },
+        {
+          "type": "consultation close",
+          "date": "2026-12-12",
+          "note": "60 days after Federal Register publication; calendar date inferred from an apparent 13 Oct 2026 publication, not confirmed at source"
+        }
+      ],
+      "who_is_obliged": "Venues and intermediaries offering retail crypto commodity transactions; prospective crypto asset market DCMs",
+      "vendor_effect": "constraint",
+      "vendor_effect_note": "Pre-proposal stage; would shape the national regime for retail spot crypto commodity markets, including market-integrity expectations that may draw on price-data and surveillance vendors.",
+      "horizon": "0-6m",
+      "confidence": "medium",
+      "sources": [
+        "https://www.cftc.gov/PressRoom/PressReleases/9307-26"
+      ],
+      "last_verified": "2026-11-01",
+      "change_log": [
+        {
+          "date": "2026-11-01",
+          "change": "New entry"
+        }
+      ]
+    },
+    {
+      "id": "FN-039",
+      "jurisdiction": "EU",
+      "instrument": "ESMA Opinion on crypto-asset services relating to non-MiCA-compliant ARTs and EMTs (ESMA75-113276571-1742)",
+      "body": "ESMA",
+      "stage": "adopted",
+      "key_dates": [
+        {
+          "type": "adoption",
+          "date": "2026-10-08",
+          "note": "Opinion dated 8 October 2026"
+        },
+        {
+          "type": "other",
+          "date": "2027-01-08",
+          "note": "NCAs to require remediation of legacy exposures no later than three months after publication; calendar date inferred from the opinion date, not stated in the text"
+        }
+      ],
+      "who_is_obliged": "MiCA-authorised CASPs (via national competent authorities)",
+      "vendor_effect": "passed down via customers",
+      "vendor_effect_note": "CASPs must stop services that increase holdings of non-compliant stablecoins; vendors supplying price feeds, routing or settlement for those tokens to EU CASPs will see demand shift to MiCA-compliant EMTs.",
+      "horizon": "0-6m",
+      "confidence": "medium",
+      "sources": [
+        "https://www.esma.europa.eu/sites/default/files/2026-10/ESMA75-113276571-1742_Opinion_on_the_provision_of_crypto_asset_services_in_relation_to_non-MiCA-compliant_asset-referenced_tokens_and_e-money_tokens.pdf"
+      ],
+      "last_verified": "2026-11-01",
+      "change_log": [
+        {
+          "date": "2026-11-01",
+          "change": "New entry"
+        }
+      ]
+    },
+    {
+      "id": "FN-040",
+      "jurisdiction": "UK",
+      "instrument": "FCA DeFi guidance consultation (GC26/7) and cryptoasset perimeter guidance (CP26/36)",
+      "body": "FCA",
+      "stage": "consultation",
+      "key_dates": [
+        {
+          "type": "other",
+          "date": "2026-10-21",
+          "note": "GC26/7 and CP26/36 published"
+        },
+        {
+          "type": "consultation close",
+          "date": "2026-11-18",
+          "note": "Both consultations close; FCA plans final DeFi guidance in January 2027"
+        }
+      ],
+      "who_is_obliged": "FCA-regulated firms using DeFi (SYSC 15A, SYSC 6, MLRs); firms assessing whether perimeter exclusions apply",
+      "vendor_effect": "direct",
+      "vendor_effect_note": "CP26/36 covers the exclusion for technical services that merely give access to third-party services or a decentralised protocol, which bears on whether infrastructure vendors need permission; GC26/7 sets operational-resilience and financial-crime expectations firms will push to DeFi vendors.",
+      "horizon": "0-6m",
+      "confidence": "high",
+      "sources": [
+        "https://www.fca.org.uk/publications/guidance-consultations/gc26-7-decentralised-finance-guidance",
+        "https://www.fca.org.uk/publications/consultation-papers/cp26-36-cryptoasset-perimeter-guidance"
+      ],
+      "last_verified": "2026-11-01",
+      "change_log": [
+        {
+          "date": "2026-11-01",
+          "change": "New entry"
+        }
+      ]
+    },
+    {
+      "id": "FN-041",
+      "jurisdiction": "UK",
+      "instrument": "FCA Financial Crime Guide updates (CP26/38)",
+      "body": "FCA",
+      "stage": "consultation",
+      "key_dates": [
+        {
+          "type": "other",
+          "date": "2026-10-23",
+          "note": "Published (page metadata shows 22 October)"
+        },
+        {
+          "type": "consultation close",
+          "date": "2026-12-24",
+          "note": "Feedback deadline"
+        }
+      ],
+      "who_is_obliged": "FCA-regulated firms, including future cryptoasset firms",
+      "vendor_effect": "passed down via customers",
+      "vendor_effect_note": "Adds cryptoasset content reflecting the October 2027 regime; firms’ financial-crime controls (screening, analytics) will be reflected in vendor requirements.",
+      "horizon": "0-6m",
+      "confidence": "high",
+      "sources": [
+        "https://www.fca.org.uk/publications/consultation-papers/cp26-38-financial-crime-guide-updates"
+      ],
+      "last_verified": "2026-11-01",
+      "change_log": [
+        {
+          "date": "2026-11-01",
+          "change": "New entry"
+        }
+      ]
+    },
+    {
+      "id": "FN-042",
+      "jurisdiction": "International",
+      "instrument": "FSB note to G20 on global stablecoin arrangements: cross-border vulnerabilities and monitoring",
+      "body": "FSB",
+      "stage": "adopted",
+      "key_dates": [
+        {
+          "type": "adoption",
+          "date": "2026-10-12",
+          "note": "Published"
+        }
+      ],
+      "who_is_obliged": "None directly; informs national authorities",
+      "vendor_effect": "demand driver",
+      "vendor_effect_note": "Proposes monitoring metrics and reviews data-source limitations for cross-border stablecoin monitoring; supports demand for reserve, flow and on-chain data that authorities and issuers can rely on.",
+      "horizon": "no future date",
+      "confidence": "high",
+      "sources": [
+        "https://www.fsb.org/2026/10/global-stablecoin-arrangements-cross-border-vulnerabilities-and-financial-stability-monitoring/"
+      ],
+      "last_verified": "2026-11-01",
+      "change_log": [
+        {
+          "date": "2026-11-01",
+          "change": "New entry"
         }
       ]
     }
