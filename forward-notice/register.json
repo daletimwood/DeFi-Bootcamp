@@ -1151,27 +1151,26 @@
         {
           "type": "other",
           "date": "2026-10-05",
-          "note": "ANPRM announced (Press Release 9307-26); 91 FR 64811"
-        },
-        {
-          "type": "consultation close",
-          "date": "2026-12-12",
-          "note": "60 days after Federal Register publication; calendar date inferred from an apparent 13 Oct 2026 publication, not confirmed at source"
+          "note": "ANPRM announced (Press Release 9307-26; 91 FR 64811); comments due 60 days after Federal Register publication, calendar date not confirmed"
         }
       ],
       "who_is_obliged": "Venues and intermediaries offering retail crypto commodity transactions; prospective crypto asset market DCMs",
       "vendor_effect": "constraint",
       "vendor_effect_note": "Pre-proposal stage; would shape the national regime for retail spot crypto commodity markets, including market-integrity expectations that may draw on price-data and surveillance vendors.",
-      "horizon": "0-6m",
+      "horizon": "no future date",
       "confidence": "medium",
       "sources": [
         "https://www.cftc.gov/PressRoom/PressReleases/9307-26"
       ],
-      "last_verified": "2026-11-01",
+      "last_verified": "2026-11-03",
       "change_log": [
         {
           "date": "2026-11-01",
           "change": "New entry"
+        },
+        {
+          "date": "2026-11-03",
+          "change": "Removed inferred 12 Dec 2026 comment date; relative deadline recorded as stated per register method"
         }
       ]
     },
@@ -1185,27 +1184,26 @@
         {
           "type": "adoption",
           "date": "2026-10-08",
-          "note": "Opinion dated 8 October 2026"
-        },
-        {
-          "type": "other",
-          "date": "2027-01-08",
-          "note": "NCAs to require remediation of legacy exposures no later than three months after publication; calendar date inferred from the opinion date, not stated in the text"
+          "note": "Opinion dated 8 October 2026; NCAs to require remediation of legacy exposures no later than three months after publication, calendar date not stated"
         }
       ],
       "who_is_obliged": "MiCA-authorised CASPs (via national competent authorities)",
       "vendor_effect": "passed down via customers",
       "vendor_effect_note": "CASPs must stop services that increase holdings of non-compliant stablecoins; vendors supplying price feeds, routing or settlement for those tokens to EU CASPs will see demand shift to MiCA-compliant EMTs.",
-      "horizon": "0-6m",
+      "horizon": "no future date",
       "confidence": "medium",
       "sources": [
         "https://www.esma.europa.eu/sites/default/files/2026-10/ESMA75-113276571-1742_Opinion_on_the_provision_of_crypto_asset_services_in_relation_to_non-MiCA-compliant_asset-referenced_tokens_and_e-money_tokens.pdf"
       ],
-      "last_verified": "2026-11-01",
+      "last_verified": "2026-11-03",
       "change_log": [
         {
           "date": "2026-11-01",
           "change": "New entry"
+        },
+        {
+          "date": "2026-11-03",
+          "change": "Removed inferred 8 Jan 2027 remediation date; relative deadline recorded as stated per register method"
         }
       ]
     },
