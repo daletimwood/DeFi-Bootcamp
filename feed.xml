@@ -12,6 +12,14 @@
     <itunes:category text="Business"/>
     <itunes:category text="Investing"/>
     <item>
+      <title>DeFi Digest — Saturday, November 7, 2026</title>
+      <description>Covering: Converge by The Defiant &lt;no-reply@mail.thedefiant.io&gt;, The Defiant &lt;no-reply@mail.thedefiant.io&gt;, OMFIF &lt;noreply@omfif.org&gt;, "Alex Thorn, Galaxy Research" &lt;alex.thorn@galaxy.com&gt;</description>
+      <itunes:episodeType>full</itunes:episodeType>
+      <pubDate>Sat, 07 Nov 2026 06:44:02 +0000</pubDate>
+      <guid isPermaLink="false">defi-digest-2026-11-07</guid>
+      <enclosure url="https://pub-4f582366954141c791be8307132b3c52.r2.dev/chainlink/episodes/defi-2026-11-07.mp3" type="audio/mpeg" length="5473728"/>
+    </item>
+    <item>
       <title>DeFi Digest — Friday, November 6, 2026</title>
       <description>Covering: Trade Finance Global &lt;talks@tradefinanceglobal.com&gt;, Talos Research &lt;research@talos.com&gt;, FinTech Weekly &lt;news@fintechweekly.com&gt;, DefiLlama Research &lt;defillama-research@mail.beehiiv.com&gt;, OMFIF &lt;noreply@omfif.org&gt;</description>
       <itunes:episodeType>full</itunes:episodeType>
